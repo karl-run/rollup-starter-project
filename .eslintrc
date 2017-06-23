@@ -1,8 +1,15 @@
 {
   "parser": "babel-eslint",
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
   "env": {
-    "node": true,
-    "mocha": true
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "linebreak-style": "off",
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off"
   }
 }

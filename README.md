@@ -24,7 +24,7 @@ editing to implement the functionality of your package. As shown in this
 example, you can `import` other files from this file similarly to how you would
 `require` packages typically (e.g. `lib/utils.js`).
 
-### test/index_test.js
+### test/index.test.js
 
 This is the starting point for tests in your package. You should import the
 code to test from `lib/` as shown in the example. The project is already
