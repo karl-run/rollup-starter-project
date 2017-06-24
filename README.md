@@ -1,7 +1,7 @@
-# rollup-starter-project
+# rollup-starter-project-react
 
 This package shows how to get started with [rollup][rollup] (and [babel][babel]) for writing
-npm packages using ES6 modules. Writing npm packages with a [jsnext:main][jsnext:main] allows
+npm packages using ES6 modules for writing React components. Writing npm packages with a [jsnext:main][jsnext:main] allows
 users of your package to choose whether they use it using the traditional
 `require` function understood by node.js, or using the `import` statement added
 in ES6 which can result in smaller bundles through live-code inclusion static
@@ -96,22 +96,25 @@ adheres to the style you configure in `.eslintrc`. You can remove this if you
 plan not to lint your code or if you're using another linter, such as
 [jshint](http://jshint.com) or [jscs](http://jscs.info).
 
-### mocha
+This build is also configured by default to use the airbnb set of lint rules. The 
+following dependencies are used for that: 
 
-[mocha](https://mochajs.org) is a test runner. You can remove this if you plan
+* eslint-config-airbnb
+* eslint-plugin-jsx-a11y
+* eslint-plugin-import
+* eslint-plugin-react
+
+### jest
+
+[jest](https://facebook.github.io/jest/) is a test runner. You can remove this if you plan
 not to write tests (don't do that!) or if you plan to use another test runner
 such as [Jasmine](http://jasmine.github.io).
 
-### istanbul
+### enzyme
 
-[istanbul](https://github.com/gotwarlost/istanbul) is a code coverage tool that 
-computes statement, line, function and branch coverage with module loader hooks 
-to transparently add coverage when running tests. You can remove this dependency 
-if you won't be writing tests or you don't care about code coverage.
-
-You'll also have to change the `test/mocha.opts` file and remove the custom 
-reporter option `--reporter test/istanbul.reporter.js`. After that you can safely 
-delete the `test/istanbul.reporter.js` file.
+[enzyme](https://github.com/airbnb/enzyme) "Enzyme is a JavaScript Testing utility for 
+React that makes it easier to assert, manipulate, and traverse your React Components' output."
+You don't need this if you're not testing React components.
 
 ### rollup
 
@@ -123,16 +126,6 @@ to remove this dependency.
 
 This plugin enables support for [babel](http://babeljs.io), which transforms
 ES2015 code to ES5. You can remove this if you plan not to use ES2015 code.
-
-### rollup-plugin-istanbul
-
-This plugin provides seamless integration between Rollup and 
-[Istanbul](https://github.com/gotwarlost/istanbul) to generate code coverage
-reports of your project. If you don't plan to write tests or simply don't care 
-about code coverage, you can safely remove this along with Istanbul.
-
-Just like with the Istanbul dependency, you should change the `test/mocha.opts`
-file. Read the above instructions for removing Istanbul.
 
 ## Contributing
 
