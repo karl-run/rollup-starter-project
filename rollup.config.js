@@ -2,34 +2,30 @@ import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
 import postcss from 'rollup-plugin-postcss';
 
-let pkg = require('./package.json');
-let external = Object.keys(pkg.dependencies);
+const pkg = require('./package.json');
 
-let plugins = [
+const external = Object.keys(pkg.dependencies);
+
+const plugins = [
   postcss({
-    extensions: ['.css', '.sss']
+    extensions: ['.css', '.sss'],
   }),
   babel(babelrc()),
 ];
 
 export default {
   entry: 'lib/index.js',
-  plugins: plugins,
-  external: external,
+  plugins,
+  external,
   globals: {
-    react: 'React'
+    react: 'React',
   },
   targets: [
     {
       dest: pkg.main,
       format: 'umd',
       moduleName: 'rollupStarterProject',
-      sourceMap: true
+      sourceMap: true,
     },
-    {
-      dest: pkg.module,
-      format: 'es',
-      sourceMap: true
-    }
-  ]
+  ],
 };
