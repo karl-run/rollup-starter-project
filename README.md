@@ -1,3 +1,7 @@
+# See [rollup-starter-lib-react](https://github.com/karl-run/rollup-starter-lib-react) for a simpler, up-to-date example of how to create a library component with Rollup
+
+---
+
 # rollup-starter-project-react
 
 This package shows how to get started with [rollup][rollup] (and [babel][babel]) for writing
